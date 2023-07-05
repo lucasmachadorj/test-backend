@@ -20,4 +20,10 @@ describe('Connection value object', () => {
 
     expect(connection.getValue()).toBe('trifasico');
   });
+
+  it('não cria uma conexão com o tipo de conexão inexistente', () => {
+    expect(() => Connection.create('invalido')).toThrowError(
+      'Invalid connection type',
+    );
+  });
 });
