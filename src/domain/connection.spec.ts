@@ -14,4 +14,10 @@ describe('Connection value object', () => {
 
     expect(connection.getValue()).toBe('bifasico');
   });
+
+  it('cria uma conexão com o tipo de conexão trifásico', () => {
+    const connection = Connection.create('trifasico');
+
+    expect(connection.getValue()).toBe('trifasico');
+  });
 });
