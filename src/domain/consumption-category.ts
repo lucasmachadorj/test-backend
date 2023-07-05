@@ -7,7 +7,7 @@ const types = [
 ];
 
 export class ConsumptionCategory {
-  private constructor(private readonly value: string) {}
+  private constructor(private readonly _value: string) {}
 
   static create(value: string): ConsumptionCategory {
     if (!types.includes(value)) {
@@ -16,7 +16,7 @@ export class ConsumptionCategory {
     return new ConsumptionCategory(value);
   }
 
-  getValue(): string {
-    return this.value;
+  get value(): string {
+    return this._value;
   }
 }

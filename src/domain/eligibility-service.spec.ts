@@ -29,4 +29,43 @@ describe('Test the behaviour of the eligibility service', () => {
       'Classe de consumo não aceita',
     );
   });
+
+  it("retorna 'Modalidade tarifária não aceita' quando a modalidade tarifária for azul", () => {
+    const client = buildTestClient({
+      tariffModality: 'azul',
+    });
+
+    const response = EligibilityService.evaluate(client);
+
+    expect(response.razoesDeInelegibilidade).toContain(
+      'Modalidade tarifária não aceita',
+    );
+  });
+
+  it("retorna 'Modalidade tarifária não aceita' quando a modalidade tarifária for verde", () => {
+    const client = buildTestClient({
+      tariffModality: 'verde',
+    });
+
+    const response = EligibilityService.evaluate(client);
+
+    expect(response.razoesDeInelegibilidade).toContain(
+      'Modalidade tarifária não aceita',
+    );
+  });
+
+  it("retorna 'Consumo muito baixo para tipo de conexão' se a conexão é Monofásica e o consumo médio é menor que 400 kWh", () => {
+    const client = buildTestClient({
+      connectionType: 'monofasico',
+      consumptionHistory: [
+        395, 398, 401, 402, 397, 400, 398, 400, 402, 396, 399, 400,
+      ],
+    });
+
+    const response = EligibilityService.evaluate(client);
+
+    expect(response.razoesDeInelegibilidade).toContain(
+      'Consumo muito baixo para tipo de conexão',
+    );
+  });
 });

@@ -18,4 +18,16 @@ export class Consumption {
     const history = ConsumptionHistory.create(_history);
     return new Consumption(category, history);
   }
+
+  getCategory(): string {
+    return this.category.value;
+  }
+
+  getAverage(): number {
+    return this.history.average(0, 12);
+  }
+
+  getAnualConsumption(): number {
+    return this.history.cumulative(0, 12);
+  }
 }

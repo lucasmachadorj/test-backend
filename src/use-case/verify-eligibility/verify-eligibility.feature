@@ -1,7 +1,7 @@
-Funcionalidade: Verificar Eligibilidade
+Feature: Verificar Eligibilidade
 
-  Cenário: Elegibilidade é verificada e aprovada
-    Dado que o usuário preencheu todos os requisitos de elegibilidade
-    Quando o sistema verifica a elegibilidade
-    Então o sistema retorna que o usuário é elegível
-    E o sistema calcula a economia anual de CO2
+  Scenario: Elegibilidade é verificada e aprovada
+    Given que o usuário preencheu todos os requisitos de elegibilidade
+    When o sistema verifica a elegibilidade
+    Then o sistema retorna que o usuário é elegível
+    And o sistema calcula a economia anual de CO2

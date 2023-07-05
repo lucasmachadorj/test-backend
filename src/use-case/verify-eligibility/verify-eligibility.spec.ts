@@ -1,15 +1,29 @@
 import { defineFeature, loadFeature } from 'jest-cucumber';
 import path from 'path';
 
+import { VerifyEligibilityCommand } from './verify-eligibility.command';
+import { EligibilityResponse } from './verify-eligibility.response';
+import { VerifyEligibility } from './verify-eligibility.usecase';
+
 const feature = loadFeature(
   path.join(__dirname, './verify-eligibility.feature'),
 );
 
 defineFeature(feature, (test) => {
-  test('Elegibilidade é verificada e aprovada', ({ given, when, then }) => {
-    let verifyEligibilityCommand: VerifyEligibilityCommand;
-    let eligibilityResponse: EligibilityResponse;
+  let verifyEligibilityCommand: VerifyEligibilityCommand;
+  let eligibilityResponse: EligibilityResponse;
+  let verifyEligibility: VerifyEligibility;
 
+  beforeEach(() => {
+    verifyEligibility = new VerifyEligibility();
+  });
+
+  test('Elegibilidade é verificada e aprovada', ({
+    given,
+    when,
+    then,
+    and,
+  }) => {
     given(
       'que o usuário preencheu todos os requisitos de elegibilidade',
       () => {
@@ -26,16 +40,16 @@ defineFeature(feature, (test) => {
       },
     );
 
-    when('o sistema verifica a elegibilidade', async () => {
-      eligibilityResponse = await checkEligibility(verifyEligibilityCommand);
+    when('o sistema verifica a elegibilidade', () => {
+      eligibilityResponse = verifyEligibility.execute(verifyEligibilityCommand);
     });
 
     then('o sistema retorna que o usuário é elegível', () => {
       expect(eligibilityResponse.elegivel).toBe(true);
     });
 
-    then('o sistema calcula a economia anual de CO2', () => {
-      expect(eligibilityResponse.economiaAnualDeCO2).toBeGreaterThanOrEqual(0);
+    and('o sistema calcula a economia anual de CO2', () => {
+      expect(eligibilityResponse.economiaAnualDeCO2).toBe(5553.24);
     });
   });
 });
