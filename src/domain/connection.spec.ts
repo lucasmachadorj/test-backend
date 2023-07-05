@@ -8,4 +8,10 @@ describe('Connection value object', () => {
 
     expect(connection.getValue()).toBe('monofasico');
   });
+
+  it('cria uma conexão com o tipo de conexão bifásico', () => {
+    const connection = Connection.create('bifasico');
+
+    expect(connection.getValue()).toBe('bifasico');
+  });
 });
