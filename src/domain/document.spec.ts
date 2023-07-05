@@ -8,4 +8,10 @@ describe('Document value object', () => {
 
     expect(document.isCPF()).toBe(true);
   });
+
+  it("cria um documento com o número de cnpj '33400689000109'", () => {
+    const document = Document.create('33400689000109');
+
+    expect(document.isCPF()).toBe(false);
+  });
 });

@@ -1,11 +1,31 @@
+type DocumentType = 'CPF' | 'CNPJ';
+
 export class Document {
-  private constructor(private number: string) {}
+  private constructor(private number: string, private type: DocumentType) {}
 
   static create(number: string): Document {
-    return new Document(number);
+    if (this.validateCPF(number)) {
+      return new Document(number, 'CPF');
+    }
+
+    if (this.validateCNPJ(number)) {
+      return new Document(number, 'CNPJ');
+    }
+
+    throw new Error('Invalid document number');
+  }
+
+  static validateCPF(number: string): boolean {
+    const cpfRegex = /^\d{11}$/;
+    return cpfRegex.test(number);
+  }
+
+  static validateCNPJ(number: string): boolean {
+    const cnpjRegex = /^\d{14}$/;
+    return cnpjRegex.test(number);
   }
 
   isCPF(): boolean {
-    return true;
+    return this.type === 'CPF';
   }
 }
