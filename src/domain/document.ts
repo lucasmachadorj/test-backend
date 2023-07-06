@@ -12,7 +12,7 @@ export class Document {
       return new Document(number, 'CNPJ');
     }
 
-    throw new Error('Invalid document number');
+    throw new Error('Documento inválido. Insira cpf ou cnpj');
   }
 
   static validateCPF(number: string): boolean {
