@@ -1,4 +1,4 @@
-import { Connection } from './connection';
+import { Connection } from '../connection';
 
 describe('Connection value object', () => {
   it('deve ser definido', () => expect(Connection).toBeDefined());

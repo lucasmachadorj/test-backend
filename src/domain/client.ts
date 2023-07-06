@@ -1,7 +1,4 @@
-import { Connection } from './connection';
-import { Consumption } from './consumption';
-import { Document } from './document';
-import { TariffModality } from './tariff-modality';
+import { Document, Connection, TariffModality, Consumption } from '@/domain';
 
 export type ClientProps = {
   document: Document;

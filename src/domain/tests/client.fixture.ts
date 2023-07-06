@@ -1,8 +1,11 @@
-import { Client, ClientProps } from './client';
-import { Connection } from './connection';
-import { Consumption } from './consumption';
-import { Document } from './document';
-import { TariffModality } from './tariff-modality';
+import {
+  Client,
+  ClientProps,
+  Connection,
+  Consumption,
+  Document,
+  TariffModality,
+} from '@/domain';
 
 type TestClientProps = {
   document: string;

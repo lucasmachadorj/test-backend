@@ -1,4 +1,4 @@
-import { ConsumptionCategory } from './consumption-category';
+import { ConsumptionCategory } from '../consumption-category';
 
 describe('ConsumptionCategory value object', () => {
   it('deve ser definido', () => expect(ConsumptionCategory).toBeDefined());

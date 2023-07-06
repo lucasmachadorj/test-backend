@@ -1,4 +1,4 @@
-import { TariffModality } from './tariff-modality';
+import { TariffModality } from '../tariff-modality';
 
 describe('TariffModality value object', () => {
   it('should be defined', () => expect(TariffModality).toBeDefined());

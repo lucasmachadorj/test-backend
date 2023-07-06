@@ -1,9 +1,11 @@
-import { Client } from '../../domain/client';
-import { Connection } from '../../domain/connection';
-import { Consumption } from '../../domain/consumption';
-import { Document } from '../../domain/document';
-import { EligibilityService } from '../../domain/eligibility-service';
-import { TariffModality } from '../../domain/tariff-modality';
+import {
+  Client,
+  Connection,
+  Consumption,
+  Document,
+  EligibilityService,
+  TariffModality,
+} from '@/domain';
 import { VerifyEligibilityCommand } from './verify-eligibility.command';
 import { EligibilityResponse } from './verify-eligibility.response';
 

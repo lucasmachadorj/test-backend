@@ -9,7 +9,10 @@
     "strict": true,
     "esModuleInterop": true,
     "types": ["node", "jest"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.spec.ts"]

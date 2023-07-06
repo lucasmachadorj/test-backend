@@ -1,4 +1,4 @@
-import { EligibilityService } from './eligibility-service';
+import { EligibilityService } from '../eligibility-service';
 import { buildTestClient } from './client.fixture';
 
 describe('Test the behaviour of the eligibility service', () => {

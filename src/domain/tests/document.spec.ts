@@ -1,4 +1,4 @@
-import { Document } from './document';
+import { Document } from '../document';
 
 describe('Document value object', () => {
   it('deve ser definido', () => expect(Document).toBeDefined());

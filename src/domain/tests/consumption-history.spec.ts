@@ -1,4 +1,4 @@
-import { ConsumptionHistory } from './consumption-history';
+import { ConsumptionHistory } from '../consumption-history';
 
 describe('Consumption History', () => {
   it('deve ser definido', () => {
