@@ -2,21 +2,29 @@ import { EligibilityResponse } from '../use-case/verify-eligibility/verify-eligi
 import { Client } from './client';
 
 export class EligibilityService {
-  static acceptedConsumptionCategories = [
-    'comercial',
-    'residencial',
-    'industrial',
-  ];
+  private acceptedConsumptionCategories: string[];
+  private acceptedTariffModalities: string[];
+  private minimumConsumptionPerConnection: Record<string, number>;
 
-  static acceptedTariffModalities = ['convencional', 'branca'];
+  private constructor() {
+    this.acceptedConsumptionCategories = [
+      'comercial',
+      'residencial',
+      'industrial',
+    ];
 
-  static minimumConsumptionPerConnection: Record<string, number> = {
-    monofasico: 400,
-    bifasico: 500,
-    trifasico: 750,
-  };
+    this.acceptedTariffModalities = ['convencional', 'branca'];
 
-  static evaluate(client: Client): EligibilityResponse {
+    this.minimumConsumptionPerConnection = {
+      monofasico: 400,
+      bifasico: 500,
+      trifasico: 750,
+    };
+  }
+
+  static create = (): EligibilityService => new EligibilityService();
+
+  evaluate(client: Client): EligibilityResponse {
     const reasons: string[] = [];
 
     if (!client.consumptionIsOneOf(this.acceptedConsumptionCategories)) {
@@ -41,15 +49,16 @@ export class EligibilityService {
       };
     }
 
-    const calculateAnnualCO2Economy = (client: Client): number => {
-      const consumption = client.anualConsumption();
-      const co2EmissionFactor = 84 / 1000;
-      return Number((consumption * co2EmissionFactor).toFixed(2));
-    };
-
     return {
       elegivel: true,
-      economiaAnualDeCO2: calculateAnnualCO2Economy(client),
+      economiaAnualDeCO2: this.calculateAnnualCO2Economy(
+        client.anualConsumption(),
+      ),
     };
+  }
+
+  private calculateAnnualCO2Economy(consumption: number): number {
+    const co2EmissionFactor = 84 / 1000;
+    return Number((consumption * co2EmissionFactor).toFixed(2));
   }
 }

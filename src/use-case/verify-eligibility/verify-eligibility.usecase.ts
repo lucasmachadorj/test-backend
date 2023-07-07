@@ -21,6 +21,7 @@ export class VerifyEligibility {
     const connectionType = Connection.create(tipoDeConexao);
     const tariffModality = TariffModality.create(modalidadeTarifaria);
     const consumption = Consumption.create(classeDeConsumo, historicoDeConsumo);
+    const eligibilityService = EligibilityService.create();
 
     const client = Client.create({
       document,
@@ -29,6 +30,6 @@ export class VerifyEligibility {
       consumption,
     });
 
-    return EligibilityService.evaluate(client);
+    return eligibilityService.evaluate(client);
   }
 }

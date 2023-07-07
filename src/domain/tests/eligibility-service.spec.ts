@@ -2,6 +2,12 @@ import { EligibilityService } from '../eligibility-service';
 import { buildTestClient } from './client.fixture';
 
 describe('Test the behaviour of the eligibility service', () => {
+  let eligibilityService: EligibilityService;
+
+  beforeAll(() => {
+    eligibilityService = EligibilityService.create();
+  });
+
   it('deve ser definido', () => {
     expect(EligibilityService).toBeDefined();
   });
@@ -11,7 +17,7 @@ describe('Test the behaviour of the eligibility service', () => {
       consumptionCategory: 'rural',
     });
 
-    const response = EligibilityService.evaluate(client);
+    const response = eligibilityService.evaluate(client);
 
     expect(response.razoesDeInelegibilidade).toContain(
       'Classe de consumo não aceita',
@@ -23,7 +29,7 @@ describe('Test the behaviour of the eligibility service', () => {
       consumptionCategory: 'poderPublico',
     });
 
-    const response = EligibilityService.evaluate(client);
+    const response = eligibilityService.evaluate(client);
 
     expect(response.razoesDeInelegibilidade).toContain(
       'Classe de consumo não aceita',
@@ -35,7 +41,7 @@ describe('Test the behaviour of the eligibility service', () => {
       tariffModality: 'azul',
     });
 
-    const response = EligibilityService.evaluate(client);
+    const response = eligibilityService.evaluate(client);
 
     expect(response.razoesDeInelegibilidade).toContain(
       'Modalidade tarifária não aceita',
@@ -47,7 +53,7 @@ describe('Test the behaviour of the eligibility service', () => {
       tariffModality: 'verde',
     });
 
-    const response = EligibilityService.evaluate(client);
+    const response = eligibilityService.evaluate(client);
 
     expect(response.razoesDeInelegibilidade).toContain(
       'Modalidade tarifária não aceita',
@@ -62,7 +68,7 @@ describe('Test the behaviour of the eligibility service', () => {
       ],
     });
 
-    const response = EligibilityService.evaluate(client);
+    const response = eligibilityService.evaluate(client);
 
     expect(response.razoesDeInelegibilidade).toContain(
       'Consumo muito baixo para tipo de conexão',
