@@ -12,11 +12,6 @@ const feature = loadFeature(
 defineFeature(feature, (test) => {
   let verifyEligibilityCommand: VerifyEligibilityCommand;
   let eligibilityResponse: EligibilityResponse;
-  let verifyEligibility: VerifyEligibility;
-
-  beforeEach(() => {
-    verifyEligibility = new VerifyEligibility();
-  });
 
   test('Elegibilidade é verificada e aprovada', ({
     given,
@@ -41,7 +36,7 @@ defineFeature(feature, (test) => {
     );
 
     when('o sistema verifica a elegibilidade', () => {
-      eligibilityResponse = verifyEligibility.execute(verifyEligibilityCommand);
+      eligibilityResponse = VerifyEligibility.execute(verifyEligibilityCommand);
     });
 
     then('o sistema retorna que o usuário é elegível', () => {
@@ -71,7 +66,7 @@ defineFeature(feature, (test) => {
     );
 
     when('o sistema verifica a elegibilidade', () => {
-      eligibilityResponse = verifyEligibility.execute(verifyEligibilityCommand);
+      eligibilityResponse = VerifyEligibility.execute(verifyEligibilityCommand);
     });
 
     then('o sistema retorna que o usuário não é elegível', () => {

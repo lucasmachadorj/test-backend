@@ -2,11 +2,9 @@ import { VerifyEligibilityCommand } from './verify-eligibility.command';
 import { VerifyEligibility } from './verify-eligibility.usecase';
 
 describe('Verify eligibility use case behavior', () => {
-  let verifyEligibility: VerifyEligibility;
   let command: VerifyEligibilityCommand;
 
   beforeEach(() => {
-    verifyEligibility = new VerifyEligibility();
     command = {
       numeroDoDocumento: '14041737706',
       tipoDeConexao: 'bifasico',
@@ -24,7 +22,7 @@ describe('Verify eligibility use case behavior', () => {
       numeroDoDocumento: '123463',
     };
 
-    expect(() => verifyEligibility.execute(command)).toThrowError();
+    expect(() => VerifyEligibility.execute(command)).toThrowError();
   });
 
   it('lança um erro se tipo de conexão é inválido, como xxxx', () => {
@@ -33,7 +31,7 @@ describe('Verify eligibility use case behavior', () => {
       tipoDeConexao: 'xxxx',
     };
 
-    expect(() => verifyEligibility.execute(command)).toThrowError();
+    expect(() => VerifyEligibility.execute(command)).toThrowError();
   });
 
   it('lança um erro se classe de consumo é inválida, como xxxx', () => {
@@ -42,7 +40,7 @@ describe('Verify eligibility use case behavior', () => {
       classeDeConsumo: 'xxxx',
     };
 
-    expect(() => verifyEligibility.execute(command)).toThrowError();
+    expect(() => VerifyEligibility.execute(command)).toThrowError();
   });
 
   it('lança um erro se modalidade tarifária é inválida, como xxxx', () => {
@@ -51,7 +49,7 @@ describe('Verify eligibility use case behavior', () => {
       modalidadeTarifaria: 'xxxx',
     };
 
-    expect(() => verifyEligibility.execute(command)).toThrowError();
+    expect(() => VerifyEligibility.execute(command)).toThrowError();
   });
 
   it('lança um erro se histórico de consumo é inválido, como [1, 2, 3]', () => {
@@ -60,6 +58,6 @@ describe('Verify eligibility use case behavior', () => {
       historicoDeConsumo: [1, 2, 3],
     };
 
-    expect(() => verifyEligibility.execute(command)).toThrowError();
+    expect(() => VerifyEligibility.execute(command)).toThrowError();
   });
 });

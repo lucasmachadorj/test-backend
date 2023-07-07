@@ -10,7 +10,7 @@ import { VerifyEligibilityCommand } from './verify-eligibility.command';
 import { EligibilityResponse } from './verify-eligibility.response';
 
 export class VerifyEligibility {
-  execute({
+  static execute({
     numeroDoDocumento,
     tipoDeConexao,
     classeDeConsumo,
