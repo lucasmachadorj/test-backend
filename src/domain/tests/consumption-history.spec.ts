@@ -1,6 +1,6 @@
 import { ConsumptionHistory } from '../consumption-history';
 
-describe('Consumption History', () => {
+describe('Histórico de consumo', () => {
   it('deve ser definido', () => {
     expect(ConsumptionHistory).toBeDefined();
   });

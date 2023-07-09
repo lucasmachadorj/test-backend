@@ -1,7 +1,7 @@
 import { VerifyEligibilityCommand } from './verify-eligibility.command';
 import { VerifyEligibility } from './verify-eligibility.usecase';
 
-describe('Verify eligibility use case behavior', () => {
+describe('Comportamento de caso de uso: verificação de elegibilidade', () => {
   let command: VerifyEligibilityCommand;
 
   beforeEach(() => {

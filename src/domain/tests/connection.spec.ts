@@ -1,6 +1,6 @@
 import { Connection } from '../connection';
 
-describe('Connection value object', () => {
+describe('Objeto de valor: conexão', () => {
   it('deve ser definido', () => expect(Connection).toBeDefined());
 
   it('cria uma conexão com o tipo de conexão monofásico', () => {
@@ -23,7 +23,7 @@ describe('Connection value object', () => {
 
   it('não cria uma conexão com o tipo de conexão inexistente', () => {
     expect(() => Connection.create('invalido')).toThrowError(
-      'Invalid connection type',
+      'Tipo de conexão inválido',
     );
   });
 });

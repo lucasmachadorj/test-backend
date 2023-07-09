@@ -1,6 +1,6 @@
 import { TariffModality } from '../tariff-modality';
 
-describe('TariffModality value object', () => {
+describe('Modalidade de tarifa', () => {
   it('should be defined', () => expect(TariffModality).toBeDefined());
 
   it('cria uma modalidade de tarifa convencional ', () => {

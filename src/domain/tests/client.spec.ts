@@ -1,5 +1,5 @@
 import { Client } from '../client';
 
-describe('Client', () => {
+describe('Cliente', () => {
   it('deve ser definido', () => expect(Client).toBeDefined());
 });

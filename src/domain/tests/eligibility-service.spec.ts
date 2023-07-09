@@ -1,7 +1,7 @@
 import { EligibilityService } from '../eligibility-service';
 import { buildTestClient } from './client.fixture';
 
-describe('Test the behaviour of the eligibility service', () => {
+describe('Serviço de elegibilidade', () => {
   let eligibilityService: EligibilityService;
 
   beforeAll(() => {

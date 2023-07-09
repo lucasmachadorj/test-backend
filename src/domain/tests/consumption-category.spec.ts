@@ -1,6 +1,6 @@
 import { ConsumptionCategory } from '../consumption-category';
 
-describe('ConsumptionCategory value object', () => {
+describe('Objeto de valor: categoria de consumo', () => {
   it('deve ser definido', () => expect(ConsumptionCategory).toBeDefined());
 
   it('cria uma categoria de consumo residencial', () => {

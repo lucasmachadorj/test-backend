@@ -5,7 +5,7 @@ export class Connection {
 
   static create(value: string): Connection {
     if (!connectionTypes.includes(value)) {
-      throw new Error('Invalid connection type');
+      throw new Error('Tipo de conexão inválido');
     }
     return new Connection(value);
   }

@@ -1,6 +1,6 @@
 import { Document } from '../document';
 
-describe('Document value object', () => {
+describe('Objeto de valor: documento', () => {
   it('deve ser definido', () => expect(Document).toBeDefined());
 
   it("cria um documento com o número de cpf '14041737706'", () => {
