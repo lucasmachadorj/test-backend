@@ -5,9 +5,9 @@
   "description": "Technical backend challenge for Lemon Energy",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./public && tsc",
     "start:dev": "nodemon  -r dotenv/config --exec 'ts-node' ./src/index.ts",
-    "start": "npm run build && node build/index.js",
+    "start": "npm run build && node public/index.js",
     "lint": "eslint . --ext .ts",
     "test": "jest",
     "test:dev": "jest --watchAll"
