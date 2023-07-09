@@ -13,7 +13,7 @@ describe('Histórico de consumo', () => {
     expect(consumptionHistory).toBeDefined();
   });
 
-  it('calcula a média de consumo de energia elétrica em um período', () => {
+  it('calcula a média de consumo de energia elétrica em um período de 12 meses', () => {
     const data = [
       3878, 9760, 5976, 2797, 2481, 5731, 7538, 4392, 7859, 4160, 6941, 4597,
     ];
