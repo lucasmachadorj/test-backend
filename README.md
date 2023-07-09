@@ -27,11 +27,11 @@ body:
 
 ```json
 {
-  "numeroDoDocumento": string,
-  "tipoDeConexao": string,
-  "classeDeConsumo": string,
-  "modalidadeTarifaria": string,
-  "historicoDeConsumo": number[]
+  "numeroDoDocumento": "string",
+  "tipoDeConexao": "string",
+  "classeDeConsumo": "string",
+  "modalidadeTarifaria": "string",
+  "historicoDeConsumo": "number[]"
 }
 ```
 
@@ -39,8 +39,8 @@ response:
 
 ```json
 {
-  "elegivel": boolean,
-  "motivo": string
+  "elegivel": "boolean",
+  "motivo": "string"
 }
 ```
 
