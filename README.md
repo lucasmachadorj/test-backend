@@ -19,6 +19,10 @@ for running with docker:
 docker compose up
 ```
 
+The application runs by default on port 3000.
+
+Check below the API endpoint to test the application manually.
+
 ### API Documentation
 
 ##### POST /eligibility
