@@ -23,7 +23,7 @@ describe('Objeto de valor: conexão', () => {
 
   it('não cria uma conexão com o tipo de conexão inexistente', () => {
     expect(() => Connection.create('invalido')).toThrowError(
-      'Tipo de conexão inválido',
+      'Tipo de conexão inválido. Valores válidos: monofasico, bifasico, trifasico',
     );
   });
 });

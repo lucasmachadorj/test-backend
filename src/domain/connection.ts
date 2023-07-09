@@ -5,7 +5,9 @@ export class Connection {
 
   static create(value: string): Connection {
     if (!connectionTypes.includes(value)) {
-      throw new Error('Tipo de conexão inválido');
+      throw new Error(
+        'Tipo de conexão inválido. Valores válidos: monofasico, bifasico, trifasico',
+      );
     }
     return new Connection(value);
   }
