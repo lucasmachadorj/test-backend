@@ -11,7 +11,9 @@ export class ConsumptionHistory {
 
   static create(data: number[]): ConsumptionHistory {
     if (data.length < 12) {
-      throw new Error('Invalid consumption history');
+      throw new Error(
+        'A série histórica de consumo deve ter pelo menos 12 meses',
+      );
     }
     const props: ConsumptionHistoryProps = {
       history: data,

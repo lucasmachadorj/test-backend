@@ -11,7 +11,9 @@ export class ConsumptionCategory {
 
   static create(value: string): ConsumptionCategory {
     if (!types.includes(value)) {
-      throw new Error('Invalid consumption category');
+      throw new Error(
+        'Categoria de consumo inválida. Valores válidos: residencial, industrial, comercial, rural, poderPublico',
+      );
     }
     return new ConsumptionCategory(value);
   }

@@ -5,7 +5,9 @@ export class TariffModality {
 
   static create(value: string): TariffModality {
     if (!types.includes(value)) {
-      throw new Error('Invalid tariff modality');
+      throw new Error(
+        'Modalidade de tarifa inválida. Valores válidos: azul, branca, verde, convencional',
+      );
     }
     return new TariffModality(value);
   }

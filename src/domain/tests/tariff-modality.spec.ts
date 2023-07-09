@@ -29,7 +29,7 @@ describe('Modalidade de tarifa', () => {
 
   it('não cria uma modalidade de tarifa inválida', () => {
     expect(() => TariffModality.create('invalido')).toThrowError(
-      'Invalid tariff modality',
+      'Modalidade de tarifa inválida. Valores válidos: azul, branca, verde, convencional',
     );
   });
 });

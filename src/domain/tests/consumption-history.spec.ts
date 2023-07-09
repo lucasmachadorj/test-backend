@@ -22,6 +22,8 @@ describe('Histórico de consumo', () => {
   });
 
   it('lança um erro se histórico de consumo é inválido, como [1, 2, 3]', () => {
-    expect(() => ConsumptionHistory.create([1, 2, 3])).toThrowError();
+    expect(() => ConsumptionHistory.create([1, 2, 3])).toThrowError(
+      'A série histórica de consumo deve ter pelo menos 12 meses',
+    );
   });
 });

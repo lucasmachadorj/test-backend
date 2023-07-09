@@ -35,7 +35,7 @@ describe('Objeto de valor: categoria de consumo', () => {
 
   it('não cria uma categoria de consumo inexistente', () => {
     expect(() => ConsumptionCategory.create('invalido')).toThrowError(
-      'Invalid consumption category',
+      'Categoria de consumo inválida. Valores válidos: residencial, industrial, comercial, rural, poderPublico',
     );
   });
 });

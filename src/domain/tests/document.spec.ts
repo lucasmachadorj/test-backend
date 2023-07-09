@@ -16,6 +16,8 @@ describe('Objeto de valor: documento', () => {
   });
 
   it('lança um erro se documento é inválido, como 123463', () => {
-    expect(() => Document.create('123463')).toThrowError();
+    expect(() => Document.create('123463')).toThrowError(
+      'Documento inválido. Insira cpf ou cnpj',
+    );
   });
 });
