@@ -20,4 +20,8 @@ describe('Histórico de consumo', () => {
     const consumptionHistory = ConsumptionHistory.create(data);
     expect(consumptionHistory.average(0, 12)).toBe(5509.17);
   });
+
+  it('lança um erro se histórico de consumo é inválido, como [1, 2, 3]', () => {
+    expect(() => ConsumptionHistory.create([1, 2, 3])).toThrowError();
+  });
 });

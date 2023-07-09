@@ -14,4 +14,8 @@ describe('Objeto de valor: documento', () => {
 
     expect(document.isCPF()).toBe(false);
   });
+
+  it('lança um erro se documento é inválido, como 123463', () => {
+    expect(() => Document.create('123463')).toThrowError();
+  });
 });

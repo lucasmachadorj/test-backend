@@ -4,7 +4,7 @@ import { VerifyEligibility } from '@/application/verify-eligibility/verify-eligi
 
 const router = Router();
 
-router.get('/eligibility', (req, res) => {
+router.post('/eligibility', (req, res) => {
   const { body } = req;
   try {
     const response = VerifyEligibility.execute(body);
