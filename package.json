@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "start:dev": "nodemon -r dotenv/config --exec 'ts-node' ./src/index.ts",
+    "start:dev": "nodemon  -r dotenv/config --exec 'ts-node' ./src/index.ts",
     "start": "npm run build && node build/index.js",
     "lint": "eslint . --ext .ts",
     "test": "jest",
@@ -44,6 +44,10 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "jest-cucumber": "^3.0.1"
+    "jest-cucumber": "^3.0.1",
+    "module-alias": "^2.2.3"
+  },
+  "_moduleAliases": {
+    "@": "src"
   }
 }
