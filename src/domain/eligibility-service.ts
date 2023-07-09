@@ -1,4 +1,4 @@
-import { EligibilityResponse } from '../use-case/verify-eligibility/verify-eligibility.response';
+import { EligibilityResponse } from '../application/verify-eligibility/verify-eligibility.response';
 import { Client } from './client';
 
 export class EligibilityService {

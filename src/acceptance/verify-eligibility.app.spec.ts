@@ -1,9 +1,9 @@
 import { defineFeature, loadFeature } from 'jest-cucumber';
 import path from 'path';
 
-import { VerifyEligibilityCommand } from '../use-case/verify-eligibility/verify-eligibility.command';
-import { EligibilityResponse } from '../use-case/verify-eligibility/verify-eligibility.response';
-import { VerifyEligibility } from '../use-case/verify-eligibility/verify-eligibility.usecase';
+import { VerifyEligibilityCommand } from '../application/verify-eligibility/verify-eligibility.command';
+import { EligibilityResponse } from '../application/verify-eligibility/verify-eligibility.response';
+import { VerifyEligibility } from '../application/verify-eligibility/verify-eligibility.usecase';
 
 const feature = loadFeature(
   path.join(__dirname, './verify-eligibility.feature'),

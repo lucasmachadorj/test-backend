@@ -1,5 +1,6 @@
-import { VerifyEligibility } from '@/use-case/verify-eligibility/verify-eligibility.usecase';
 import { Router } from 'express';
+
+import { VerifyEligibility } from '@/application/verify-eligibility/verify-eligibility.usecase';
 
 const router = Router();
 
@@ -16,3 +17,9 @@ router.get('/eligibility', (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
+router.get('/healthcheck', (req, res) => {
+  res.status(200).json({ status: 'OK' });
+});
+
+export default router;
