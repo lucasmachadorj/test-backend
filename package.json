@@ -2,7 +2,7 @@
   "name": "lemon-backend-test",
   "version": "1.0.0",
   "author": "Lucas Machado",
-  "description": "Technical backend challenge for Lemon Energy",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./public && tsc",
